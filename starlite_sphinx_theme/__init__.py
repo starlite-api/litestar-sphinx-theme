@@ -35,7 +35,7 @@ def update_global_config(app: Sphinx) -> None:
         app.config["html_favicon"] = "_static/favicon.ico"
 
 
-def setup(app: Sphinx) -> None:
+def setup(app: Sphinx) -> dict[str, bool]:
     theme_path = Path(__file__).parent / "theme"
 
     app.setup_extension("sphinx_design")
@@ -45,3 +45,5 @@ def setup(app: Sphinx) -> None:
     app.connect("builder-inited", update_global_config)
 
     app.add_css_file("style.css")
+
+    return {"parallel_read_safe": True, "parallel_write_safe": True}
