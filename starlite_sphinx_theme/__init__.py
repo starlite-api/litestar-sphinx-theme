@@ -27,6 +27,14 @@ def update_html_context(
     context["navbar_items"] = theme_options.get("navbar_items")
 
 
+def update_global_config(app: Sphinx) -> None:
+    if not app.config["html_logo"]:
+        app.config["html_logo"] = "_static/logo.svg"
+
+    if not app.config["html_favicon"]:
+        app.config["html_favicon"] = "_static/favicon.ico"
+
+
 def setup(app: Sphinx) -> None:
     theme_path = Path(__file__).parent / "theme"
 
@@ -34,5 +42,6 @@ def setup(app: Sphinx) -> None:
     app.setup_extension("sphinx_copybutton")
     app.add_html_theme("starlite_sphinx_theme", str(theme_path))
     app.connect("html-page-context", update_html_context)
+    app.connect("builder-inited", update_global_config)
 
     app.add_css_file("style.css")
