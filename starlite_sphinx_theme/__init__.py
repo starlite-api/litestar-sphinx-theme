@@ -38,12 +38,10 @@ def update_global_config(app: Sphinx) -> None:
 def setup(app: Sphinx) -> dict[str, bool]:
     theme_path = Path(__file__).parent / "theme"
 
-    app.setup_extension("sphinx_design")
-    app.setup_extension("sphinx_copybutton")
     app.add_html_theme("starlite_sphinx_theme", str(theme_path))
     app.connect("html-page-context", update_html_context)
     app.connect("builder-inited", update_global_config)
 
-    app.add_css_file("style.css")
+    app.add_css_file("starlite-sphinx-theme.css", priority=1000)
 
     return {"parallel_read_safe": True, "parallel_write_safe": True}
