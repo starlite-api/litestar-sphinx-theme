@@ -30,9 +30,6 @@ packages = [
 [tool.poetry.dependencies]
 python = ">=3.8, <4.0"
 pydata-sphinx-theme = "^0.13.1"
-sphinx-design = "^0.3.0"
-sphinx-toolbox = "^3.4.0"
-sphinx-copybutton = "^0.5.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "*"
