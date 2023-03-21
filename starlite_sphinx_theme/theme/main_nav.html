@@ -3,25 +3,22 @@
         <a class="nav-link nav-internal"
            href="{{ target if target.startswith('http') else pathto(target) }}">{{ label }}</a>
     </li>
-{%- endmacro %} {% macro nav_link(label, target) -%}
-    <li class="nav-item">
-        <a class="nav-link nav-internal"
-           href="{{ target if target.startswith('http') else pathto(target) }}">{{ label }}</a>
-    </li>
 {%- endmacro %}
 
-{% if navbar_items %}
+
+{% if use_page_nav %}
+    {% include "navbar-nav.html" %}
+{% endif %}
+{% if extra_navbar_items %}
     <nav class="navbar-nav">
-        <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="{{ _('Site Navigation') }}">
-            {{ _("Site Navigation") }}
-        </p>
         <ul id="navbar-main-elements" class="navbar-nav">
-            {% for label, item in navbar_items | items %}
+            {% for label, item in extra_navbar_items | items %}
                 {% if item is string %}
                     {{ nav_link(label, item) }}
                 {% else %}
                     <div class="nav-item dropdown">
-                        <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true">
+                        <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown"
+                                aria-haspopup="true">
                             {{ label }}
                         </button>
                         <ul class="dropdown-menu">
@@ -34,6 +31,4 @@
             {% endfor %}
         </ul>
     </nav>
-{% else %}
-    {% extends "navbar-nav.html" %}
 {% endif %}

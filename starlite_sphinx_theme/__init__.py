@@ -24,7 +24,8 @@ def update_html_context(
     if not theme_options:
         return
 
-    context["navbar_items"] = theme_options.get("navbar_items")
+    context["extra_navbar_items"] = theme_options.get("extra_navbar_items")
+    context["use_page_nav"] = theme_options.get("use_page_nav", True)
 
 
 def update_global_config(app: Sphinx) -> None:
@@ -33,6 +34,31 @@ def update_global_config(app: Sphinx) -> None:
 
     if not app.config["html_favicon"]:
         app.config["html_favicon"] = "_static/favicon.ico"
+
+    theme_options = _get_theme_options(app)
+    if not theme_options:
+        return
+
+    github_repo_name = theme_options.get("github_repo_name")
+    if not github_repo_name:
+        raise ValueError("GitHub URL not provided. Set 'github_repo_name=...' in html_theme_options")
+    icon_links = theme_options.setdefault("icon_links", [])
+    icon_links.extend(
+        [
+            {
+                "name": "GitHub",
+                "url": f"https://github.com/starlite-api/{github_repo_name}",
+                "icon": "fa-brands fa-github",
+                "type": "fontawesome",
+            },
+            {
+                "name": "Discord",
+                "url": "https://discord.gg/X3FJqy8d2j",
+                "icon": "fa-brands fa-discord",
+                "type": "fontawesome",
+            },
+        ]
+    )
 
 
 def setup(app: Sphinx) -> dict[str, bool]:
