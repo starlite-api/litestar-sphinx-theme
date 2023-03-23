@@ -26,6 +26,10 @@ def update_html_context(
 
     context["extra_navbar_items"] = theme_options.get("extra_navbar_items")
     context["use_page_nav"] = theme_options.get("use_page_nav", True)
+    context["github_repo_link"] = f"https://github.com/starlite-api/{theme_options['github_repo_name']}"
+    context["discord_link"] = theme_options.get("discord_link", "https://discord.gg/X3FJqy8d2j")
+    context["twitter_link"] = theme_options.get("twitter_link", "https://twitter.com/StarliteAPI/")
+    context["reddit_link"] = theme_options.get("reddit_link", "https://www.reddit.com/r/starlite")
 
 
 def update_global_config(app: Sphinx) -> None:
