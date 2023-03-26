@@ -37,7 +37,7 @@ def update_global_config(app: Sphinx) -> None:
         app.config["html_logo"] = "_static/logo.svg"
 
     if not app.config["html_favicon"]:
-        app.config["html_favicon"] = "_static/favicon.ico"
+        app.config["html_favicon"] = "_static/favicon.png"
 
     theme_options = _get_theme_options(app)
     if not theme_options:
