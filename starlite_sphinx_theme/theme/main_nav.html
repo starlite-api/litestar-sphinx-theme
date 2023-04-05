@@ -1,34 +1,11 @@
-{% macro nav_link(label, target) -%}
-    <li class="nav-item">
-        <a class="nav-link nav-internal"
-           href="{{ target if target.startswith('http') else pathto(target) }}">{{ label }}</a>
-    </li>
-{%- endmacro %}
+{% from "macros.html" import menu with context %}
 
 
 {% if use_page_nav %}
     {% include "navbar-nav.html" %}
 {% endif %}
 {% if extra_navbar_items %}
-    <nav class="navbar-nav">
-        <ul id="navbar-main-elements" class="navbar-nav">
-            {% for label, item in extra_navbar_items | items %}
-                {% if item is string %}
-                    {{ nav_link(label, item) }}
-                {% else %}
-                    <div class="nav-item dropdown">
-                        <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown"
-                                aria-haspopup="true">
-                            {{ label }}
-                        </button>
-                        <ul class="dropdown-menu">
-                            {% for child_label, child_item in item | items %}
-                                {{ nav_link(child_label, child_item) }}
-                            {% endfor %}
-                        </ul>
-                    </div>
-                {% endif %}
-            {% endfor %}
-        </ul>
+    <nav class="hidden lg:flex lg:gap-x-4">
+        {{ menu(extra_navbar_items) }}
     </nav>
 {% endif %}

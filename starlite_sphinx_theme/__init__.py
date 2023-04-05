@@ -73,5 +73,6 @@ def setup(app: Sphinx) -> dict[str, bool]:
     app.connect("builder-inited", update_global_config)
 
     app.add_css_file("starlite-sphinx-theme.css", priority=1000)
+    app.add_js_file("starlite-theme.js")
 
     return {"parallel_read_safe": True, "parallel_write_safe": True}

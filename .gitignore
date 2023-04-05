@@ -8,3 +8,5 @@ __pycache__/
 .env
 .vscode
 .python-version
+/starlite_sphinx_theme/theme/static/starlite-sphinx-theme.css
+/node_modules/
