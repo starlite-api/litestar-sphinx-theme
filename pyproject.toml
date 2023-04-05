@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "starlite-sphinx-theme"
-version = "0.1.0"
+version = "0.2.0"
 description = "A Sphinx theme for the Starlite organization"
 authors = ["Janek Nouvertné <provinzkraut@posteo.de>"]
 maintainers = []
