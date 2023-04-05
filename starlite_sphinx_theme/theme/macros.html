@@ -9,7 +9,7 @@
 
 {% macro dropown_menu_item_link(link, title) %}
     <a href="{{ nav_link(link) }}"
-       class="block font-semibold text-gray-900 dark:text-gray-200 hover:text-[#EDB641] dark:hover:text-[#EDB641] !no-underline select-none">
+       class="block font-semibold text-gray-900 dark:text-gray-200 hover:text-[#EDB641] dark:hover:text-[#EDB641] !no-underline select-none cursor-pointer">
         {{ title }}
         <span class="absolute inset-0"></span>
     </a>
@@ -40,7 +40,7 @@
 {% macro dropdown_menu(title, menu_item) %}
     <div class="relative">
         <span type="button"
-                class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900 dark:text-gray-100 hover:!text-[#EDB641] st-dropdown-toggle dropdown-closed select-none"
+                class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900 dark:text-gray-100 hover:!text-[#EDB641] st-dropdown-toggle dropdown-closed select-none cursor-pointer"
                 data-dropdown-state="closed"
                 aria-expanded="false">
             {{ title }}
@@ -69,7 +69,7 @@
     {% for title, item in menu_items | items %}
         {% if item is string %}
             <a href="{{ nav_link(item) }}"
-               class="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-100 hover:!text-[#EDB641] select-none">{{ title }}</a>
+               class="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-100 hover:!text-[#EDB641] select-none cursor-pointer">{{ title }}</a>
         {% else %}
             {{ dropdown_menu(title=title, menu_item=item) }}
         {% endif %}
