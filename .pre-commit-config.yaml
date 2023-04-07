@@ -38,3 +38,10 @@ repos:
       - id: pyright
         additional_dependencies:
           - sphinx
+  - repo: local
+    hooks:
+      - id: build-assets
+        name: build-assets
+        language: node
+        entry: tailwindcss -i litestar_sphinx_theme/style.css -o litestar_sphinx_theme/theme/static/litestar-sphinx-theme.css -m
+        additional_dependencies: [tailwindcss]

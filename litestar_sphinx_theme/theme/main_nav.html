@@ -1,0 +1,11 @@
+{% from "macros.html" import menu with context %}
+
+
+{% if use_page_nav %}
+    {% include "navbar-nav.html" %}
+{% endif %}
+{% if extra_navbar_items %}
+    <nav class="hidden lg:flex lg:gap-x-4">
+        {{ menu(extra_navbar_items) }}
+    </nav>
+{% endif %}
