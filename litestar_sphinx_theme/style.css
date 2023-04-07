@@ -37,8 +37,8 @@ html[data-theme="light"] {
 html[data-theme="light"],
 html[data-theme="dark"] {
   --pst-color-background: var(--color-background-primary);
-  --starlite-gold: #EDB641;
-  --pst-color-primary: var(--starlite-gold);
+  --litestar-gold: #EDB641;
+  --pst-color-primary: var(--litestar-gold);
 }
 
 h1, h2 {

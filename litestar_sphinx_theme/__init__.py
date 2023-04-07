@@ -26,10 +26,10 @@ def update_html_context(
 
     context["extra_navbar_items"] = theme_options.get("extra_navbar_items")
     context["use_page_nav"] = theme_options.get("use_page_nav", True)
-    context["github_repo_link"] = f"https://github.com/starlite-api/{theme_options['github_repo_name']}"
+    context["github_repo_link"] = f"https://github.com/litestar-org/{theme_options['github_repo_name']}"
     context["discord_link"] = theme_options.get("discord_link", "https://discord.gg/X3FJqy8d2j")
-    context["twitter_link"] = theme_options.get("twitter_link", "https://twitter.com/StarliteAPI/")
-    context["reddit_link"] = theme_options.get("reddit_link", "https://www.reddit.com/r/starlite")
+    context["twitter_link"] = theme_options.get("twitter_link", "https://twitter.com/LitestarAPI")
+    context["reddit_link"] = theme_options.get("reddit_link", "https://www.reddit.com/r/litestarapi")
 
 
 def update_global_config(app: Sphinx) -> None:
@@ -51,7 +51,7 @@ def update_global_config(app: Sphinx) -> None:
         [
             {
                 "name": "GitHub",
-                "url": f"https://github.com/starlite-api/{github_repo_name}",
+                "url": f"https://github.com/litestar-org/{github_repo_name}",
                 "icon": "fa-brands fa-github",
                 "type": "fontawesome",
             },
@@ -68,11 +68,11 @@ def update_global_config(app: Sphinx) -> None:
 def setup(app: Sphinx) -> dict[str, bool]:
     theme_path = Path(__file__).parent / "theme"
 
-    app.add_html_theme("starlite_sphinx_theme", str(theme_path))
+    app.add_html_theme("litestar_sphinx_theme", str(theme_path))
     app.connect("html-page-context", update_html_context)
     app.connect("builder-inited", update_global_config)
 
-    app.add_css_file("starlite-sphinx-theme.css", priority=1000)
-    app.add_js_file("starlite-theme.js")
+    app.add_css_file("litestar-sphinx-theme.css", priority=1000)
+    app.add_js_file("litestar-theme.js")
 
     return {"parallel_read_safe": True, "parallel_write_safe": True}
