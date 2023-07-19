@@ -21,17 +21,21 @@ table.docutils {
 /* theme customization */
 
 html[data-theme="dark"] {
+  --litestar-gray: #DCDFE4;
   --color-background-primary: #18181b;
   --color-background-secondary: #27272a;
   --pst-color-on-background: #27272a;
   --pst-color-border: #2f2f2f;
   --pst-color-text-muted: #f3f4f6;
+  --pst-color-inline-code: var(--litestar-gray);
 }
 
 html[data-theme="light"] {
+  --litestar-blue: #202235;
   --color-background-primary: #f8f9fb;
   --color-background-secondary: #fff;
   --pst-color-text-muted: #111827;
+  --pst-color-inline-code: var(--litestar-blue);
 }
 
 html[data-theme="light"],
