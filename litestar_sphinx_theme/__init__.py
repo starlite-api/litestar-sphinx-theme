@@ -18,7 +18,11 @@ def _get_theme_options(app: Sphinx) -> dict[str, Any] | None:
 
 
 def update_html_context(
-    app: Sphinx, pagename: str, templatename: str, context: dict[str, Any], doctree: document
+    app: Sphinx,
+    pagename: str,
+    templatename: str,
+    context: dict[str, Any],
+    doctree: document,
 ) -> None:
     theme_options = _get_theme_options(app)
     if not theme_options:
@@ -27,9 +31,18 @@ def update_html_context(
     context["extra_navbar_items"] = theme_options.get("extra_navbar_items")
     context["use_page_nav"] = theme_options.get("use_page_nav", True)
     context["github_repo_link"] = f"https://github.com/litestar-org/{theme_options['github_repo_name']}"
-    context["discord_link"] = theme_options.get("discord_link", "https://discord.gg/X3FJqy8d2j")
-    context["twitter_link"] = theme_options.get("twitter_link", "https://twitter.com/LitestarAPI")
-    context["reddit_link"] = theme_options.get("reddit_link", "https://www.reddit.com/r/litestarapi")
+    context["discord_link"] = theme_options.get(
+        "discord_link",
+        "https://discord.gg/X3FJqy8d2j",
+    )
+    context["twitter_link"] = theme_options.get(
+        "twitter_link",
+        "https://twitter.com/LitestarAPI",
+    )
+    context["reddit_link"] = theme_options.get(
+        "reddit_link",
+        "https://www.reddit.com/r/litestarapi",
+    )
 
 
 def update_global_config(app: Sphinx) -> None:
@@ -45,7 +58,8 @@ def update_global_config(app: Sphinx) -> None:
 
     github_repo_name = theme_options.get("github_repo_name")
     if not github_repo_name:
-        raise ValueError("GitHub URL not provided. Set 'github_repo_name=...' in html_theme_options")
+        msg = "GitHub URL not provided. Set 'github_repo_name=...' in html_theme_options"
+        raise ValueError(msg)
     icon_links = theme_options.setdefault("icon_links", [])
     icon_links.extend(
         [
@@ -61,7 +75,7 @@ def update_global_config(app: Sphinx) -> None:
                 "icon": "fa-brands fa-discord",
                 "type": "fontawesome",
             },
-        ]
+        ],
     )
 
 

@@ -9,3 +9,8 @@ __pycache__/
 .vscode
 .python-version
 /node_modules/
+
+# pdm
+.pdm-python
+.pdm.toml
+__pypackages__/
