@@ -82,3 +82,9 @@ target-version = "py311"
 
 [tool.ruff.pydocstyle]
 convention = "google"
+
+[tool.ruff.isort]
+known-first-party = ["litestar_sphinx_theme"]
+
+[tool.ruff.per-file-ignores]
+"**/*.*" = ["ANN101", "ANN401", "ANN102", "TD", "ARG001"]
