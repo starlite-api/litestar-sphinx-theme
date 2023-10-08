@@ -1,5 +1,5 @@
 install:
-	poetry install
+	pdm install
 	npm install
 
 build-assets:
