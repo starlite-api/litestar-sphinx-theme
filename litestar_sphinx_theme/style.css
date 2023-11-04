@@ -1,6 +1,14 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --litestar-blue: #202235;
+  --litestar-gold: #EDB641;
+  --litestar-yellow: #FFD480;
+  --litestar-gray: #DCDFE4;
+  --litestar-light: #ffffff;
+  --litestar-dark: #202020;
+}
 
 [aria-expanded="true"] .menu-state-indicator  {
     transform: rotate(-180deg);
@@ -9,8 +17,6 @@
 .menu-state-indicator {
     transition: transform .2s ease;
 }
-
-
 
 table.docutils {
   clear: left;
@@ -21,7 +27,6 @@ table.docutils {
 /* theme customization */
 
 html[data-theme="dark"] {
-  --litestar-gray: #DCDFE4;
   --color-background-primary: #18181b;
   --color-background-secondary: #27272a;
   --pst-color-on-background: #27272a;
@@ -31,7 +36,6 @@ html[data-theme="dark"] {
 }
 
 html[data-theme="light"] {
-  --litestar-blue: #202235;
   --color-background-primary: #f8f9fb;
   --color-background-secondary: #fff;
   --pst-color-text-muted: #111827;
@@ -41,8 +45,15 @@ html[data-theme="light"] {
 html[data-theme="light"],
 html[data-theme="dark"] {
   --pst-color-background: var(--color-background-primary);
-  --litestar-gold: #EDB641;
   --pst-color-primary: var(--litestar-gold);
+}
+
+html[data-theme="dark"] {
+  --pst-color-secondary: var(--litestar-light);
+}
+
+html[data-theme="light"] {
+  --pst-color-secondary: var(--litestar-dark);
 }
 
 h1, h2 {
