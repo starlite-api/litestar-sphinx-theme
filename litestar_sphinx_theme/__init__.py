@@ -33,7 +33,7 @@ def update_html_context(
     context["github_repo_link"] = f"https://github.com/litestar-org/{theme_options['github_repo_name']}"
     context["discord_link"] = theme_options.get(
         "discord_link",
-        "https://discord.gg/X3FJqy8d2j",
+        "https://discord.gg/litestar-919193495116337154",
     )
     context["twitter_link"] = theme_options.get(
         "twitter_link",
@@ -71,7 +71,7 @@ def update_global_config(app: Sphinx) -> None:
             },
             {
                 "name": "Discord",
-                "url": "https://discord.gg/X3FJqy8d2j",
+                "url": "https://discord.gg/litestar-919193495116337154",
                 "icon": "fa-brands fa-discord",
                 "type": "fontawesome",
             },
