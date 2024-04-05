@@ -26,6 +26,7 @@ classifiers = [
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
     "Programming Language :: Python",
     "Topic :: Internet :: WWW/HTTP",
     "Topic :: Software Development :: Libraries",
@@ -82,7 +83,7 @@ ignore = [
 ]
 line-length = 120
 src = ["litestar_sphinx_theme"]
-target-version = "py311"
+target-version = "py312"
 
 [tool.ruff.pydocstyle]
 convention = "google"
