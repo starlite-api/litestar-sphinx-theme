@@ -14,9 +14,17 @@
   --accent-9: var(--litestar-gold); /* the active link, hover link, left .. admonition:: border */
   --accent-11: red; /* TODO: unknown */
 
-  --accent-a2: rgba(32, 34, 53, 0.1); /* Maybe? the background color of the code blocks */
-  --accent-a3: rgba(32, 34, 53); /* .. admonition::, double backticks */
+  --accent-a2: rgba(32, 34, 53, 0.1); /* the background color of the code blocks */
+  --accent-a3: rgb(255, 255, 255); /* .. admonition::, double backticks */
   --accent-a6: rgba(237, 182, 65, 0.96);  /* keyword highlighting, function/class names */
   --accent-a9: green; /* TODO: unknown */
   --accent-a11: rgba(237, 182, 65, 0.92); /* tab names, announcement banner, menu link hovers */
+
+  --syntax-light-property: var(--litestar-gold);
+  --syntax-light-keyword: var(--litestar-blue);
+  --syntax-light-constant: var(--litestar-blue);
+
+  --syntax-dark-property: var(--litestar-gold);
+  --syntax-dark-keyword: var(--litestar-gray);
+  --syntax-dark-constant: var(--litestar-gold);
 }
