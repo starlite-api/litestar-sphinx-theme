@@ -30,24 +30,25 @@ def update_html_context(
 
     context["extra_navbar_items"] = theme_options.get("extra_navbar_items")
     context["use_page_nav"] = theme_options.get("use_page_nav", True)
-    context["github_repo_link"] = f"https://github.com/litestar-org/{theme_options['github_repo_name']}"
-    context["discord_link"] = theme_options.get(
+    context["github_url"] = f"https://github.com/litestar-org/{theme_options['github_repo_name']}"
+    context["discord_url"] = theme_options.get(
         "discord_link",
         "https://discord.gg/litestar-919193495116337154",
     )
-    context["twitter_link"] = theme_options.get(
+    context["twitter_url"] = theme_options.get(
         "twitter_link",
         "https://twitter.com/LitestarAPI",
     )
-    context["reddit_link"] = theme_options.get(
-        "reddit_link",
-        "https://www.reddit.com/r/litestarapi",
-    )
+    # waiting for shibuya#32
+    # context["reddit_link"] = theme_options.get(
+    #     "reddit_link",
+    #     "https://www.reddit.com/r/litestarapi",
+    # )
 
 
 def update_global_config(app: Sphinx) -> None:
     if not app.config["html_logo"]:
-        app.config["html_logo"] = "_static/logo.svg"
+        app.config["html_logo"] = "_static/logo-light.svg"
 
     if not app.config["html_favicon"]:
         app.config["html_favicon"] = "_static/favicon.png"
