@@ -8,99 +8,15 @@
   --litestar-gray: #DCDFE4;
   --litestar-light: #ffffff;
   --litestar-dark: #202020;
-}
 
-[aria-expanded="true"] .menu-state-indicator  {
-    transform: rotate(-180deg);
-}
+  --accent-2: purple; /* TODO: unknown */
+  --accent-3: var(--litestar-gray);  /* captions */
+  --accent-9: var(--litestar-gold); /* the active link, hover link, left .. admonition:: border */
+  --accent-11: red; /* TODO: unknown */
 
-.menu-state-indicator {
-    transition: transform .2s ease;
-}
-
-table.docutils {
-  clear: left;
-  float: left;
-  margin: 0 1rem 1rem;
-}
-
-/* theme customization */
-
-html[data-theme="dark"] {
-  --color-background-primary: #18181b;
-  --color-background-secondary: #27272a;
-  --pst-color-on-background: #27272a;
-  --pst-color-border: #2f2f2f;
-  --pst-color-text-muted: #f3f4f6;
-  --pst-color-inline-code: var(--litestar-gray);
-}
-
-html[data-theme="light"] {
-  --color-background-primary: #f8f9fb;
-  --color-background-secondary: #fff;
-  --pst-color-text-muted: #111827;
-  --pst-color-inline-code: var(--litestar-blue);
-}
-
-html[data-theme="light"],
-html[data-theme="dark"] {
-  --pst-color-background: var(--color-background-primary);
-  --pst-color-primary: var(--litestar-gold);
-}
-
-html[data-theme="dark"] {
-  --pst-color-secondary: var(--litestar-light);
-}
-
-html[data-theme="light"] {
-  --pst-color-secondary: var(--litestar-dark);
-}
-
-h1, h2 {
-  color: unset;
-}
-
-@media (min-width: 960px) {
-  .bd-page-width {
-    max-width: 100rem;
-  }
-}
-
-.bd-sidebar-primary {
-  display: block;
-  flex: 0 0 18%;
-}
-
-.bd-header .navbar-nav .nav-item {
-  font-weight: 600;
-}
-
-.bd-content,
-.bd-sidebar-secondary {
-  background-color: var(--color-background-secondary);
-}
-
-.sd-tab-content {
-  box-shadow: 0 -0.0625rem var(--sd-color-tabs-overline);
-}
-
-div.literal-block-wrapper,
-pre {
-  border: none;
-}
-
-.code-block-caption {
-  background-color: var(--pst-color-surface);
-}
-
-.navbar-persistent--mobile {
-  margin-left: unset;
-}
-
-.navbar-persistent--mobile:last-of-type {
-  padding-left: 1rem;
-}
-
-#navbar-icon-links a {
-  padding-top: 0.2rem;
+  --accent-a2: rgba(32, 34, 53, 0.1); /* Maybe? the background color of the code blocks */
+  --accent-a3: rgba(32, 34, 53); /* .. admonition::, double backticks */
+  --accent-a6: rgba(237, 182, 65, 0.96);  /* keyword highlighting, function/class names */
+  --accent-a9: green; /* TODO: unknown */
+  --accent-a11: rgba(237, 182, 65, 0.92); /* tab names, announcement banner, menu link hovers */
 }

@@ -60,23 +60,11 @@ def update_global_config(app: Sphinx) -> None:
     if not github_repo_name:
         msg = "GitHub URL not provided. Set 'github_repo_name=...' in html_theme_options"
         raise ValueError(msg)
-    icon_links = theme_options.setdefault("icon_links", [])
-    icon_links.extend(
-        [
-            {
-                "name": "GitHub",
-                "url": f"https://github.com/litestar-org/{github_repo_name}",
-                "icon": "fa-brands fa-github",
-                "type": "fontawesome",
-            },
-            {
-                "name": "Discord",
-                "url": "https://discord.gg/litestar-919193495116337154",
-                "icon": "fa-brands fa-discord",
-                "type": "fontawesome",
-            },
-        ],
-    )
+    # TODO: fix
+    # icon_links.extend(
+    #         },
+    #         },
+    #     ],
 
 
 def setup(app: Sphinx) -> dict[str, bool]:
