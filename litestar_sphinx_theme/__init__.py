@@ -42,8 +42,6 @@ def update_html_context(
     # waiting for shibuya#32
     # context["reddit_link"] = theme_options.get(
     #     "reddit_link",
-    #     "https://www.reddit.com/r/litestarapi",
-    # )
 
 
 def update_global_config(app: Sphinx) -> None:
@@ -51,7 +49,7 @@ def update_global_config(app: Sphinx) -> None:
         app.config["html_logo"] = "_static/logo-light.svg"
 
     if not app.config["html_favicon"]:
-        app.config["html_favicon"] = "_static/favicon.png"
+        app.config["html_favicon"] = "_static/favicon.svg"
 
     theme_options = _get_theme_options(app)
     if not theme_options:
