@@ -39,9 +39,10 @@ def update_html_context(
         "twitter_link",
         "https://twitter.com/LitestarAPI",
     )
-    # waiting for shibuya#32
-    # context["reddit_link"] = theme_options.get(
-    #     "reddit_link",
+    context["reddit_url"] = theme_options.get(
+        "reddit_link",
+        "https://www.reddit.com/r/LitestarAPI",
+    )
 
 
 def update_global_config(app: Sphinx) -> None:
@@ -59,11 +60,6 @@ def update_global_config(app: Sphinx) -> None:
     if not github_repo_name:
         msg = "GitHub URL not provided. Set 'github_repo_name=...' in html_theme_options"
         raise ValueError(msg)
-    # TODO: fix
-    # icon_links.extend(
-    #         },
-    #         },
-    #     ],
 
 
 def setup(app: Sphinx) -> dict[str, bool]:
