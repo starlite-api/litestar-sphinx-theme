@@ -40,6 +40,7 @@ dependencies = [
     "sphinx-copybutton>=0.5.2",
     "sphinx-toolbox>=3.5.0",
     "blacken-docs>=1.16.0",
+    "sphinx-togglebutton",
 ]
 
 [project.entry-points."sphinx.html_themes"]
