@@ -1,6 +1,3 @@
-@tailwind components;
-@tailwind utilities;
-
 :root {
     --litestar-blue: #202235;
     --litestar-gold: #EDB641;
