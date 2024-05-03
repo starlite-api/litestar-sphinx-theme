@@ -47,7 +47,7 @@ def update_html_context(
 
 def update_global_config(app: Sphinx) -> None:
     if not app.config["html_logo"]:
-        app.config["html_logo"] = "_static/logo-light.svg"
+        app.config["html_logo"] = "_static/logo-light.png"
 
     if not app.config["html_favicon"]:
         app.config["html_favicon"] = "_static/favicon.svg"
