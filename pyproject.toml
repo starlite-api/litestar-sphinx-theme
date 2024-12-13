@@ -54,19 +54,8 @@ test = [
     "pytest-cov>=4.1.0",
 ]
 
-
-[tool.hatch.build]
-dev-mode-dirs = ["."]
-
-[tool.hatch.build.targets.sdist]
-exclude = [".github", "docs"]
-include = ["litestar_sphinx_theme/*", "LICENSE", "README.md", "CHANGELOG.md","package.json","tailwind.config.js","package-lock.json"]
-skip-excluded-dirs = false
-
 [tool.hatch.build.targets.wheel]
-include = ["LICENSE", "README.md", "CHANGELOG.md"]
 packages = ["litestar_sphinx_theme"]
-sources = ["litestar_sphinx_theme"]
 
 
 
