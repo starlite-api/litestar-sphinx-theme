@@ -13,7 +13,7 @@ maintainers = [
 license = { text = "MIT" }
 requires-python = ">=3.8,<4.0"
 name = "litestar-sphinx-theme"
-version = "0.2.0"
+version = "0.3.1"
 description = "A Sphinx theme for the Litestar organization"
 keywords = ["litestar", "sphinx", "theme", "documentation"]
 classifiers = [
@@ -22,10 +22,9 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Natural Language :: English",
     "Operating System :: OS Independent",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
     "Programming Language :: Python",
     "Topic :: Internet :: WWW/HTTP",
     "Topic :: Software Development :: Libraries",
@@ -33,23 +32,32 @@ classifiers = [
     "Typing :: Typed",
 ]
 dependencies = [
-    "pydata-sphinx-theme<1.0.0,>=0.13.3",
-    "sphinx-design<1.0.0,>=0.3.0",
+    "sphinx-design",
+    "shibuya",
+    "sphinx-autobuild",
+    "sphinx-copybutton",
+    "sphinx-toolbox",
+    "sphinx-togglebutton",
 ]
+
 
 [project.entry-points."sphinx.html_themes"]
 litestar_sphinx_theme = "litestar_sphinx_theme"
 
-[tool.pdm]
-[tool.pdm.dev-dependencies]
-dev = [
-    "pre-commit>=3.4.0",
-    "ruff>=0.0.292",
-]
+
+
+[dependency-groups]
+dev = ["nodeenv", { include-group = "linting" }, { include-group = "test" }  ]
+linting = ["pre-commit>=3.4.0", "mypy>=1.5.1", "ruff>=0.0.287", "types-docutils", "slotscheck", "basedpyright", "pyright"]
 test = [
     "pytest>=7.4.2",
     "pytest-cov>=4.1.0",
 ]
+
+[tool.hatch.build.targets.wheel]
+packages = ["litestar_sphinx_theme"]
+
+
 
 [tool.pdm.build]
 includes = ["litestar_sphinx_theme", "CHANGELOG.md"]
@@ -87,4 +95,4 @@ convention = "google"
 known-first-party = ["litestar_sphinx_theme"]
 
 [tool.ruff.per-file-ignores]
-"**/*.*" = ["ANN101", "ANN401", "ANN102", "TD", "ARG001"]
+"**/*.*" = [  "ANN401",  "TD", "ARG001"]
